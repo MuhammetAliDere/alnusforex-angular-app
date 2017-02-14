@@ -1,0 +1,12 @@
+<form ng-class="{{ class }}" ng-submit="submitAction()" method="post">
+    <input class="form-control" id="hesap_adi_soyadi" required type="text" name="names" placeholder="Ad Soyad" ng-model="formData.firstname">
+    <input class="form-control" id="hesap_email" required type="email" name="emails" placeholder="Email Adresi" ng-model="formData.clientEmail" pattern="[a-zA-Z0-9._%+-]{1,25}@[a-zA-Z0-9.-]{2,25}\.[a-zA-Z]{2,4}">
+    <input class="form-control" id="hesap_telefon" required type="tel" name="numbers" placeholder="Telefon Numarası" ng-model="formData.phone" ng-change="phoneFilter()">
+    <button style="margin-bottom: 15px;" class="btn btn-primary btn-md btnxs center-block btn-block" id="submit" name="submit" data-loading-text="Gönderiliyor...">
+        <span ng-bind="buttonText" style="font-family: Segoe, 'Segoe UI', 'DejaVu Sans', 'Trebuchet MS', Verdana, sans-serif; font-size: 24px;"></span>
+    </button>
+    <div class="form-group confirm-row">
+        <input type="checkbox" id="iletisim-faliyetleri" ng-model="formData.winning" ng-value="1">
+        <label for="iletisim-faliyetleri" style="font-size: 13px;git">Alnus Yatırım Menkul Değerler A.Ş. tarafından bilgilendirme kampanya içerikli tüm iletişim faaliyetlerini kabul ediyorum.</label>
+    </div>
+</form>

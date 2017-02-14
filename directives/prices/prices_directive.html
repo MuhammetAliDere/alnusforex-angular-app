@@ -1,0 +1,35 @@
+<div class="parite-wrap">
+    <!--<div class="slicky-carousel">-->
+    <slick infinite="false" slides-to-show="5" slides-to-scroll="1">
+        <div ng-repeat="line in fixSlickArray" ng-if="data[activeDatas[$index]].symbol != ''" class="box-wrap text-center">
+            <div class="symbol_box">
+                <div class="col-xs-12 text-center symbol">
+                    <span ng-if="data[activeDatas[$index]].new_name == ''">{{ data[activeDatas[$index]].symbol }}</span>
+                    <span ng-if="data[activeDatas[$index]].new_name != ''">{{ data[activeDatas[$index]].new_name }}</span>
+                    <span ng-if="data[activeDatas[$index]].direction == 'Up'" class="direction Up">
+                        <i class="fa fa-arrow-up"></i>
+                    </span>
+                    <span ng-if="data[activeDatas[$index]].direction == 'Down'" class="direction Down">
+                        <i class="fa fa-arrow-down"></i>
+                    </span>
+                </div>
+                <div class="col-xs-6 text-center money bid">
+                    {{ data[activeDatas[$index]].bid }} <!-- Satış Fiyatı -->
+                    <a ng-click="showAdvanced($event, 'alsat')" ng-disabled="ajaxActive">
+                        <span class="btn btn-danger bid_desc">Satış</span>
+                    </a>
+                </div>
+                <div class="col-xs-6 text-center money ask">
+                    {{ data[activeDatas[$index]].ask }} <!-- Alış Fiyatı -->
+                    <a ng-click="showAdvanced($event, 'alsat')" ng-disabled="ajaxActive">
+                        <span class="btn open-accnt btn-success ask_desc">Alış</span>
+                    </a>
+                </div>
+                <div class="col-xs-6 specs high">En Yüksek: <b>{{ data[activeDatas[$index]].high }}</b></div> <!-- En Yüksek -->
+                <div class="col-xs-6 specs low">En Düşük: <b>{{ data[activeDatas[$index]].low }}</b></div> <!-- En Düşük -->
+            </div>
+        </div>
+    </slick>
+    <!--</div>-->
+    <div class="clearfix"></div>
+</div>

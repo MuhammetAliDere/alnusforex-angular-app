@@ -1,0 +1,15 @@
+<form ng-class="{{ class }}" ng-submit="submitAction()" method="post">
+    <div class="field">
+        <input type="text" pattern="(.*)\s(.*)" ng-model="formData.firstname" maxlength="25" required class="name-field form-control" placeholder="Adınız Soyadınız">
+    </div>
+    <div class="field">
+        <input type="email" ng-model="formData.clientEmail" class="email-field form-control" pattern="[a-zA-Z0-9._%+-]{1,25}@[a-zA-Z0-9.-]{2,25}\.[a-zA-Z]{2,4}" required placeholder="E-posta Adresiniz">
+    </div>
+    <div class="field">
+        <input type="text" ng-model="formData.phone" ng-change="phoneFilter()" class="phone-field form-control" placeholder="Telefon Numaranız">
+    </div>
+    <div class="submit">
+        <button class="btn" type="submit" class="form-control">HEMEN BAŞVUR</button>
+    </div>
+</form>
+

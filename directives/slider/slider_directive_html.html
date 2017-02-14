@@ -1,0 +1,30 @@
+<div class="container slider-directive {{ addClass }}">
+    <div data-ng-repeat="slide in slides" class="slide slide-animation nonDraggableImage"
+         ng-hide="!isCurrentSlideIndex($index)" md-swipe-right="nextSlide()" md-swipe-left="prevSlide()">
+        <div class="slider-wrap">
+
+            <div class="slider">
+                <a class='slider-link' ng-click="showAdvanced($event, slide.type, slide.url)">
+                    <h2 class='slider-header'>
+                        <span class='line bold' ng-bind="slide.header"></span>
+                    </h2>
+                    <p class='text' ng-bind-html="slide.title"></p>
+                    <div class='slider-icon'><img ng-src='{{ slide.img_src }}'></div>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <a class="arrow prev" ng-click="nextSlide()"></a>
+    <a class="arrow next" ng-click="prevSlide()"></a>
+    <nav class="nav">
+        <div class="wrapper">
+            <ul class="dots">
+                <li class="dot" ng-repeat="slide in slides">
+                    <a ng-class="{'active':isCurrentSlideIndex($index)}"
+                       ng-click="setCurrentSlideIndex($index);">{{slide.description}}</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>

@@ -1,0 +1,16 @@
+<form id="mailchimp" ng-class="{{ className(class) }}" ng-submit="submitAction()" method="post">
+    <!-- SUBSCRIPTION SUCCESSFUL OR ERROR MESSAGES -->
+    <h6 class="subscription-success"></h6>
+    <h6 class="subscription-error"></h6>
+
+    <div class="btn-group">
+        <input id="first_name" name="MERGE1" type="text" ng-model="formData.firstname" placeholder="Adınız Soyadınız" class="form-control subscribe-input subscribe-name input-lg" required>
+        <input type="email" name="email" id="subscriber-email" ng-model="formData.clientEmail" placeholder="Email Adresi" class="form-control subscribe-input input-lg" pattern="[a-zA-Z0-9._%+-]{1,25}@[a-zA-Z0-9.-]{2,25}\.[a-zA-Z]{2,4}">
+        <input type="text" name="email" id="subscriber-email" ng-model="formData.phone" placeholder="Telefon Numaranız" class="form-control subscribe-input input-lg" ng-change="phoneFilter()" maxlength="10">
+        <!-- SUBSCRIBE BUTTON -->
+        <button type="submit" id="subscribe-button" class="btn btn-primary btnxs btn-lg">Gönder <i></i></button>
+    </div>
+    <div class="message editContent">
+        Size özel müşteri temsilcimiz sizinle iletişime geçecektir.
+    </div>
+</form>

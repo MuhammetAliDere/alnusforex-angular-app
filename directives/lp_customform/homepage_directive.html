@@ -1,0 +1,43 @@
+<div ng-class="{{ class }}">
+    <form class="land-form" ng-submit="submitAction()" method="post">
+        <div class="form-row">
+            <div class="field">
+                <div class="icon-addon addon-md">
+                    <input type="text" placeholder="İsim Soyisim" class="form-control" id="fullname" ng-model="formData.firstname" pattern="(.*)\s(.*)" required>
+                    <label for="fullname" class="glyphicon glyphicon-user" rel="tooltip" title="fullname"></label>
+                </div>
+            </div>
+            <div class="field">
+                <div class="icon-addon addon-md">
+                    <input type="email" class="email-field form-control" id="email" ng-model="formData.clientEmail" pattern="[a-zA-Z0-9._%+-]{1,25}@[a-zA-Z0-9.-]{2,25}\.[a-zA-Z]{2,4}" placeholder="E-posta Adresi" required>
+                    <label for="email" class="glyphicon glyphicon-envelope" rel="tooltip" title="email"></label>
+                </div>
+            </div>
+            <div class="field">
+                <div class="icon-addon addon-md">
+                    <input type="text" class="phone-field form-control" id="phone" ng-model="formData.phone" ng-change="phoneFilter()" placeholder="Telefon Numarası" required>
+                    <label for="phone" class="glyphicon glyphicon-earphone" rel="tooltip" title="phone"></label>
+                </div>
+            </div>
+
+            <div class="field">
+                <div class="icon-addon addon-md">
+                    <input type="text" class="phone-field form-control" id="tahmin" ng-model="formData.predict" placeholder="Dolar Tahmini:(3.90)" required>
+                    <label for="tahmin" class="glyphicon glyphicon-signal" rel="tooltip" title="tahmin"></label>
+                </div>
+            </div>
+
+            <div class="submit">
+                <button class="btn" type="submit">HEMEN BAŞVUR</button>
+            </div>
+        </div>
+        <div class="clear"></div>
+        <div class="confirm-row">
+            <input type="checkbox" name="" id="iletisim-faliyetleri">
+            <label for="iletisim-faliyetleri">Alnus Yatırım Menkul Değerler A.Ş. tarafından bilgilendirme kampanya içerikli tüm iletişim faaliyetlerini kabul ediyorum.</label>
+        </div>
+        <div class="mobil-form-close-link" id="mobil-form-close-link">
+            <a class="btn btn-small btn-danger">kapat</a>
+        </div>
+    </form>
+</div>

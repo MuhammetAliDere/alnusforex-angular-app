@@ -1,0 +1,53 @@
+<div class="form-wrap" id="form-wrap">
+    <div class="container">
+        <!--<h2 class="form-header">-->
+        <!--<b>"</b><span class="green">DETAYLI BİLGİ VE ÜCRETSİZ DEMO</span><b>"</b>-->
+        <!--için formu doldurmanız yeterli!-->
+        <!--</h2>-->
+        <div class="form">
+            <form class="land-form" ng-submit="submitAction()" method="post">
+            <input class="form-token" type="hidden" name="_x_token" value="{{ _csrf_main_token }}" />
+            <div class="form-row">
+                <div class="field">
+                    <div class="icon-addon addon-md">
+                        <input type="text" placeholder="İsim Soyisim" class="form-control" id="fullname" name="firstname" ng-model="formData.firstname" pattern="(.*)\s(.*)" required>
+                        <label for="fullname" class="glyphicon glyphicon-user" rel="tooltip" title="fullname"></label>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="icon-addon addon-md">
+                        <input type="email" class="email-field form-control" id="email" name="clientEmail" pattern="[a-zA-Z0-9._%+-]{1,25}@[a-zA-Z0-9.-]{2,25}\.[a-zA-Z]{2,4}" ng-model="formData.clientEmail"  placeholder="E-posta Adresi" required>
+                        <label for="email" class="glyphicon glyphicon-envelope" rel="tooltip" title="email"></label>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="icon-addon addon-md">
+                        <input type="text" class="phone-field form-control" id="phone" name="phone" placeholder="Telefon Numarası" ng-change="phoneFilter()" ng-model="formData.phone" required>
+                        <label for="phone" class="glyphicon glyphicon-earphone" rel="tooltip" title="phone"></label>
+                    </div>
+                </div>
+                <div class="submit" ng-if="homeAjaxPasif">
+                    <button class="btn" type="submit" ng-disabled="ajaxActive">HEMEN BAŞVUR</button>
+                </div>
+                <div class="submit" ng-if="!homeAjaxPasif">
+                    <button class="btn" type="submit">
+                        <img src="bundles/main/assets/icons/loading_2.gif" style="width:35px;">
+                    </button>
+                </div>
+            </div>
+            <div class="clear"></div>
+            <div class="confirm-row">
+                <input type="checkbox" id="iletisim-faliyetleri" ng-model="formData.winning" ng-value="1">
+                <label for="iletisim-faliyetleri">Alnus Yatırım Menkul Değerler A.Ş. tarafından bilgilendirme kampanya içerikli tüm iletişim faaliyetlerini kabul ediyorum.</label>
+            </div>
+            <!--<div class="confirm-row">-->
+                <!--<input type="checkbox" name="" id="gizlilik-sözlesmesi">-->
+                <!--<label for="gizlilik-sözlesmesi">Gizlilik sözleşmesini okudum kabul ediyorum.</label>-->
+            <!--</div>-->
+            <!--<div class="mobil-form-close-link" id="mobil-form-close-link">-->
+                <!--<a class="btn btn-small btn-danger">kapat</a>-->
+            <!--</div>-->
+            </form>
+        </div>
+    </div>
+</div>

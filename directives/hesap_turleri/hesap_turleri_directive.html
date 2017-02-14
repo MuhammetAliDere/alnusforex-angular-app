@@ -1,0 +1,42 @@
+<table class="table table-bordered table-hesap-turleri">
+    <tr>
+        <td>&nbsp;</td>
+        <td style="text-align: center;" colspan="5"><strong>Dinamik</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td><strong>Sabit</strong></td>
+        <td><strong>Sabit</strong></td>
+    </tr>
+    <tr>
+        <td>
+            <input type="text" ng-model="search" placeholder="Ara.." style="max-width: 70px;">
+        </td>
+        <td>Standart</td>
+        <td>Gümüş</td>
+        <td>Altın</td>
+        <td>Premium</td>
+        <td>VIP</td>
+        <td>Standart</td>
+        <td>VIP</td>
+    </tr>
+    <tr>
+        <td>Enstruman</td>
+        <td>Min. Deposit: 250 $</td>
+        <td>Min. Deposit: 3.000 $</td>
+        <td>Min. Deposit: 5.000 $</td>
+        <td>Min. Deposit: 10.000 $</td>
+        <td>Min. Deposit: 15.000 $</td>
+        <td>Min. Deposit: 250 $</td>
+        <td>Min. Deposit: 15.000 $</td>
+    </tr>
+    <tr ng-repeat="item in data | filter:search" class="data-tr">
+        <td>
+            <div ng-bind="item.FIELD1"></div>
+        </td>
+        <td ng-bind="item.FIELD2"></td>
+        <td ng-bind="item.FIELD3"></td>
+        <td ng-bind="item.FIELD4"></td>
+        <td ng-bind="item.FIELD5"></td>
+        <td ng-bind="item.FIELD6"></td>
+        <td ng-bind="item.FIELD7"></td>
+        <td ng-bind="item.FIELD8"></td>
+    </tr>
+</table>

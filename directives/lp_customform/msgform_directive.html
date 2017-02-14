@@ -1,0 +1,31 @@
+<div ng-class="{{ class }}">
+    <form class="land-form" ng-submit="submitAction()" method="post">
+        <div class="left">
+            <div class="bilgi-form-row">
+                <div class="form-col">
+                    <input type="text" pattern="(.*)\s(.*)" ng-model="formData.firstname" maxlength="25" required class="name-field" placeholder="Adınız Soyadınız">
+                </div>
+                <div class="form-col">
+                    <input type="email" class="email-field" ng-model="formData.clientEmail" pattern="[a-zA-Z0-9._%+-]{1,25}@[a-zA-Z0-9.-]{2,25}\.[a-zA-Z]{2,4}" required placeholder="E-posta Adresiniz">
+                </div>
+                <div class="form-col">
+                    <input type="text" class="phone-field" ng-model="formData.phone" ng-change="phoneFilter()" required placeholder="Telefon Numaranız">
+                </div>
+                <div class="clearfix"></div>
+                <div class="form-text-area">
+                    <textarea placeholder="MESAJINIZ" ng-model="formData.message"></textarea>
+                </div>
+                <p class="info"><b class="bold">Forex nedir</b>, avantajları nelerdir ve forex işlemleri nasıl yapılır konuları hakkında detaylı bilgi sahibi olmak için web sitemizde bulunan iletişim formlarını kullanarak yatırım uzmanlarımızdan ücretsiz eğitim desteği alabilirsiniz. AlnusFX müşteri temsilcileri ve yatırım uzmanları hafta içi 5 Gün 24 Saat siz değerli müşterilerimize hizmet vermektedir.</p>
+            </div>
+        </div>
+        <div class="right">
+            <div class="submit">
+                <div>
+                    <img src="bundles/main/assets/landing/img/arrow_text.png">
+                    <p class="text">Müşteri Temsilcimizin Sizlerle İletişime Geçmesi İçin Lütfen Bilgilerinizi Doğru Olarak Giriniz...</p>
+                </div>
+                <button type="submit" class="button">SİZİ ARAYALIM</button>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,35 @@
+<form data-toggle="validator" role="form" id="land-form" ng-class="{{ className(class) }}" ng-submit="submitAction()" method="post">
+    <div class="form-group has-feedback">
+        <input type="text" ng-model="formData.firstname" pattern="(.*)\s(.*)" name="fullname" maxlength="25"
+               required class="form-control" placeholder="İSİM SOYİSİM">
+        <i class="form-control-feedback glyphicon glyphicon-user"></i>
+    </div>
+    <div class="form-group has-feedback">
+        <input type="email" ng-model="formData.clientEmail" pattern="[a-zA-Z0-9._%+-]{1,25}@[a-zA-Z0-9.-]{2,25}\.[a-zA-Z]{2,4}"
+               required placeholder="E-POSTA ADRESİ" class="form-control">
+        <i class="form-control-feedback glyphicon glyphicon-envelope"></i>
+    </div>
+    <div class="form-group has-feedback">
+        <input type="text" ng-model="formData.phone" ng-change="phoneFilter()" maxlength="10"
+               class="form-control" name="phone" required placeholder="TELEFON NUMARASI">
+        <i class="form-control-feedback glyphicon glyphicon-phone"></i>
+    </div>
+    <div class="clearfix"></div>
+    <br />
+    <div class="checkbox" style="color: #fff; font-size: 12px;">
+        <label for="c1">
+            <input ng-model="formData.winning" type="checkbox" id="c1"  name="newsletter" value="1" />
+            AlnusFX ile ilgili gelişmelerden haberdar olmak istiyorum.
+        </label>
+    </div>
+    <div class="clearfix"></div>
+    <br />
+    <div class="form-group">
+        <button type="submit" class="btn form-control nologo-btn" style="min-width: 358px;">
+            <span ng-bind="buttonText"></span>
+            <span class="icon-wrap">
+                <i class="fa fa-arrow-right" aria-hidden="true"></i>
+            </span>
+        </button>
+    </div>
+</form>

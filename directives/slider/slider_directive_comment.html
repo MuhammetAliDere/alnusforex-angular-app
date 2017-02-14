@@ -1,0 +1,22 @@
+<div class="container slider-directive {{ addClass }}">
+    <div ng-repeat="slide in slides" class="slide slide-animation nonDraggableImage"
+         md-swipe-right="nextSlide()" md-swipe-left="prevSlide()"
+         ng-hide="!isCurrentSlideIndex($index)">
+        <div class="comment-slider-wrap">
+            <div class="slider">
+                <div class="col-md-2">
+                    <img ng-src="{{slide.icon_url}}" />
+                </div>
+                <div class="col-md-10">
+                    <span class="title">{{slide.title}}</span>
+                    <div class="rate">
+                        <img ng-src="{{slide.rate_url}}">
+                    </div>
+                    <p class="text">{{slide.content}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a class="arrow prev" ng-click="nextSlide()"></a>
+    <a class="arrow next" ng-click="prevSlide()"></a>
+</div>
